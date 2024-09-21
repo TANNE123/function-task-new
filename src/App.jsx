@@ -29,6 +29,7 @@ const App = () => {
     dispatch(removeAllCard())
   }
   const style={border:"1px solid", display:"inline-block",margin:"3px", verticalAlign: "top",width:"240px",height:"250px"}
+  const childStyle={height:"190px"}
   return (
    
     <>
@@ -49,8 +50,12 @@ const App = () => {
       <hr />
       {product.map((each) => (
         <div style={style} key={each.id}>
+          <div style={childStyle}>
           <h2>{each.title}</h2>
+          </div>
+          <div>
           <button onClick={() => addHandler(each)}>add to cart</button>
+          </div>
         </div>
       ))}
     </>
